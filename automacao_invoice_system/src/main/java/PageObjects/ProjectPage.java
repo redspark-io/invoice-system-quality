@@ -7,6 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ProjectPage {
     public ProjectPage(WebDriver driver) {PageFactory.initElements(driver, this);}
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[3]/table/tbody/tr[1]/td[1]")
+    public WebElement abrirProjeto;
+
     @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[1]/div[2]/button/span[1]")
     public WebElement botaoAdicionarProjeto;
 

@@ -14,7 +14,7 @@ public class Hook {
     @Before
     public static void beforeAll() {
         driver = new ChromeDriver();
-        driver.get("http://localhost:3000");
+        driver.get("https://dev.invoice.redspark.com.br/initial-page");
     }
 //    @AfterAll
 //    public static void afterAll(){
