@@ -8,6 +8,6 @@ Funcionalidade: Sparker
 
     Dado que o usuário esteja logado no sistema na tela de Sparker
     E que usuário clique no botão editar de um sparker já cadastrado
-    Quando o usuário preencher modal de edição com os dados corretos
-    E clicar em Salvar
+    E que o usuário preencha o modal de edição com os dados corretos
+    Quando clicar em salvar "edição sparker"
     Então o sistema atualiza sparker com os dados informados

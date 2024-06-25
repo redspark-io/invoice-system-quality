@@ -1,6 +1,7 @@
 package Steps.Projeto;
 
 import PageObjects.ProjectPage;
+import Steps.Tools.GeradorDados;
 import hooks.Hook;
 import Steps.CommonSteps.CommonSteps;
 import io.cucumber.java.pt.E;
@@ -9,7 +10,7 @@ import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 import org.openqa.selenium.Keys;
 
-import static hooks.Hook.gerarNomeAleatorio;
+
 
 public class EditarProjetoSteps {
     public ProjectPage projeto;
@@ -22,11 +23,11 @@ public class EditarProjetoSteps {
         projeto.botaoEditarProjeto.click();
     }
 
-    @Quando("ele preencher o modal de edição com os dados necessarios")
+    @E("que ele preencha o modal de edição com os dados necessarios")
     public void preenhcerModal() throws InterruptedException {
         projeto.campoNomeProjetoEditar.sendKeys(Keys.CONTROL + "a");
         projeto.campoNomeProjetoEditar.sendKeys(Keys.DELETE);
-        projeto.campoNomeProjetoEditar.sendKeys(gerarNomeAleatorio());
+        projeto.campoNomeProjetoEditar.sendKeys(GeradorDados.gerarNomeAleatorio());
 
     }
 

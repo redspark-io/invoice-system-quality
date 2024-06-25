@@ -5,5 +5,6 @@ Funcionalidade: Cliente
   Cenario: Adicionar um perfil cliente
     Dado Que o usuario esteja na tela de clientes
     E que ele clique no botão de adicionar cliente
-    Quando ele preencher todos os campos do modal de cadastro corretamente
-    E clicar em salvar "adição de cliente"
+    E que ele preencha todos os campos do modal de cadastro corretamente
+    Quando clicar em salvar "adição de cliente"
+    Entao o sistema adiciona o novo cliente

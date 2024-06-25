@@ -4,5 +4,6 @@
     Cenário: cadastrar uma função a um rate card cadastrado
       Dado que o usuário esteja na tela de função
       E que ele clique no botão de adicionar
-      Quando ele preencher todos os campos do modal de cadastro corretamente
+      E que ele preencha todos os campos do modal de cadastro corretamente
+      Quando clicar em salvar "adição função"
       Então o sistema cadastra uma nova função

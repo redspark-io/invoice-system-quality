@@ -1,5 +1,6 @@
 package hooks;
 
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,24 +15,14 @@ public class Hook {
     @Before
     public static void beforeAll() {
         driver = new ChromeDriver();
-        driver.get("https://dev.invoice.redspark.com.br/initial-page");
+        driver.get("https://tst.invoice.redspark.com.br/initial-page");
     }
-//    @AfterAll
-//    public static void afterAll(){
-//        driver.quit();
-//    }
-
-
-    //Gerador de Nome aleatório
-    public static String gerarNomeAleatorio() {
-        String[] letras = {"a", "b", "c", "d", "1", "2", "3", "4", "R", "r", "x"};
-        String nomeFinal = "Automação ";
-
-        for (int i = 0; i < 10; i++) {
-            Random random = new Random();
-            int pos = random.nextInt(letras.length);
-            nomeFinal = nomeFinal.concat(letras[pos]);
-        }
-        return nomeFinal;
+    @AfterAll
+    public static void afterAll() throws InterruptedException{
+        Thread.sleep(2000);
+        driver.quit();
     }
+
+
+
 }

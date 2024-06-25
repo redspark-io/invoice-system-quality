@@ -1,12 +1,14 @@
 package Steps.rate_card;
 
 import PageObjects.RateCardPage;
+import Steps.Tools.GeradorDados;
 import hooks.Hook;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Quando;
 import io.cucumber.java.sl.In;
+import org.openqa.selenium.Keys;
 
-import static hooks.Hook.gerarNomeAleatorio;
+
 
 public class EditarRateCardSteps {
     public RateCardPage ratecard;
@@ -15,13 +17,16 @@ public class EditarRateCardSteps {
     public void abrirModalEditarRateCard() throws InterruptedException {
         ratecard = new RateCardPage(Hook.driver);
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         ratecard.botaoEditarRateCard.click();
     }
 
-    @Quando("o usuário preencher o modal de edição com os campos necessários")
+    @E("que o usuário preencher o modal de edição com os campos necessários")
     public void preencherModalEditarRateCard(){
-        ratecard.campoDescricaoRateCardEditar.sendKeys(gerarNomeAleatorio());
+        ratecard.campoDescricaoRateCardEditar.click();
+        ratecard.campoDescricaoRateCardEditar.sendKeys(Keys.CONTROL + "a");
+        ratecard.campoDescricaoRateCardEditar.sendKeys(Keys.DELETE);
+        ratecard.campoDescricaoRateCardEditar.sendKeys(GeradorDados.gerarNomeAleatorio());
         ratecard.InicioVigenciaRateCardEditar.click();
         ratecard.InicioVigenciaRateCardEditar.sendKeys("02022024");
         ratecard.FimVigenciaRateCardEditar.click();

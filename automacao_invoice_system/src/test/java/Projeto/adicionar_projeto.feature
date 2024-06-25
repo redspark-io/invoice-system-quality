@@ -5,5 +5,6 @@ Funcionalidade: Projeto
   Cenario: Cadastrar um projeto
     Dado que o usuário esteja na tela de projetos
     E que ele selecione o botão de adicionar projeto
-    Quando ele preencher todos os campos do modal de cadastro corretamente
-    E clicar em salvar "adição"
+    E que ele preencha todos os campos do modal de cadastro corretamente
+    Quando clicar em salvar "adição de projeto"
+    Entao o sistema adiciona o novo projeto
