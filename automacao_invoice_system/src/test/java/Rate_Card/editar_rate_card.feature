@@ -6,3 +6,4 @@ Funcionalidade: Rate Card
     E que ele selecione o botão de editar um rate card cadastrado
     E que o usuário preencher o modal de edição com os campos necessários
     Quando clicar em salvar "editar rate card"
+#    Entao o sistema atualiza o rate card

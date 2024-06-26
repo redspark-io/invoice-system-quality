@@ -15,13 +15,13 @@ public class Hook {
     @Before
     public static void beforeAll() {
         driver = new ChromeDriver();
-        driver.get("https://tst.invoice.redspark.com.br/initial-page");
+        driver.get("https://dev.invoice.redspark.com.br/initial-page");
     }
-    @AfterAll
-    public static void afterAll() throws InterruptedException{
-        Thread.sleep(2000);
-        driver.quit();
-    }
+//    @AfterAll
+//    public static void afterAll() throws InterruptedException{
+//        Thread.sleep(2000);
+//        driver.quit();
+//    }
 
 
 

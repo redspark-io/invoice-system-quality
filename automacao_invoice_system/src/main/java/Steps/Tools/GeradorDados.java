@@ -14,4 +14,10 @@ public class GeradorDados {
         }
         return nomeFinal;
     }
+
+    public static String gerarIdAleatorio() {
+        Random random = new Random();
+        int id = random.nextInt(10000);
+       return String.valueOf(id);
+    }
 }

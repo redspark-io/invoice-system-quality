@@ -7,6 +7,7 @@ import Steps.Tools.GeradorDados;
 import hooks.Hook;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.pt.E;
+import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 
 
@@ -43,7 +44,7 @@ public class AdicionarRateCardSteps {
         ratecard.FimVigenciaRateCard.sendKeys("01012025");
         ratecard.campoNumeroProposta.sendKeys("12345");
         ratecard.botaoStatusRateCard.click();
-        ratecard.statusAtivoRateCard.click();
     }
+
 
 }

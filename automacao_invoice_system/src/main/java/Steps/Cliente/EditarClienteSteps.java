@@ -45,16 +45,15 @@ public class EditarClienteSteps {
 
     }
     @Entao("o sistema salva a edicao do cliente")
-    public void VerificaEdicao() throws Exception {
-        Thread.sleep(2000);
-        WebElement elementAfter = Hook.driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[3]/table/tbody/tr[5]/td[3]"));
-        String ElementAfter = elementAfter.getText();
-
-        if (ElementAfter.equals(elementBefore)){
-            throw new Exception("Erro ao editar");
-        } else {
-            System.out.println("Cliente editado com sucesso");
+    public void validarEdicaoSparker() throws Exception{
+        Thread.sleep(1000);
+        WebElement mensagemDeSucesso = Hook.driver.findElement(By.id("notistack-snackbar"));
+        if (mensagemDeSucesso.getText().equals("Perfil de cliente alterado com sucesso!")) {
+            System.out.println("Perfil de cliente alterado com sucesso!");
+        }else {
+            throw new Exception("Erro ao editar perfil de cliente");
         }
+
     }
 
 

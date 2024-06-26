@@ -22,7 +22,7 @@ public class ClientPage {
 
 
     // Mapeameto dos campos do modal de adicionar cliente
-    @FindBy(how = How.NAME, using = "invoiceId")
+    @FindBy(how = How.NAME, using = "nickname")
     public WebElement campoInvoiceId;
 
     @FindBy(how = How.NAME, using = "name")

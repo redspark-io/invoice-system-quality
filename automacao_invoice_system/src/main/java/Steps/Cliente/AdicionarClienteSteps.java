@@ -14,20 +14,12 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class AdicionarClienteSteps {
-    public ClientPage cliente;
-    public RateCardPage rateCard;
-
-    public List<WebElement> elementsBefore() throws InterruptedException{
-        Thread.sleep(2000);
-        return Hook.driver.findElements(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[3]/table/tbody/tr"));
-    }
+    public ClientPage cliente = new ClientPage(Hook.driver);;
+    public RateCardPage rateCard = new RateCardPage(Hook.driver);
 
     @Dado("Que o usuario esteja na tela de clientes")
     public void telaAdicionarCliente() throws  InterruptedException{
-        cliente = new ClientPage(Hook.driver);
-        rateCard = new RateCardPage(Hook.driver);
         cliente.botaoClientes.click();
-        elementsBefore();
     }
 
     @E("que ele clique no botão de adicionar cliente")
@@ -44,15 +36,14 @@ public class AdicionarClienteSteps {
     }
 
     @Entao("o sistema adiciona o novo cliente")
-    public void VerificaTeste() throws Exception {
-        Thread.sleep(2000);
-        List<WebElement> elementsAfter = Hook.driver.findElements(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[3]/table/tbody/tr"));
-        System.out.println(elementsBefore().size());
-        System.out.println(elementsAfter.size());
-            if (elementsAfter.size() < elementsBefore().size()) {
-                throw new Exception("Cliente não foi adicionado");
-            }else{
-                System.out.println("Cliente adicionado com sucesso");
-            }
+    public void validarEdicaoSparker() throws Exception{
+        Thread.sleep(1000);
+        WebElement mensagemDeSucesso = Hook.driver.findElement(By.id("notistack-snackbar"));
+        if (mensagemDeSucesso.getText().equals("Perfil de cliente criado com sucesso!")) {
+            System.out.println("Perfil de cliente criado com sucesso!");
+        }else {
+            throw new Exception("Erro ao criar perfil de cliente");
+        }
+
     }
 }
