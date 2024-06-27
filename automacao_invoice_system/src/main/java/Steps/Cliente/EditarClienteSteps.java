@@ -11,18 +11,11 @@ import org.openqa.selenium.WebElement;
 
 
 public class EditarClienteSteps {
-    public ClientPage cliente;
-    public String elementBefore;
-
-    public WebElement PegaElemento(){
-        return Hook.driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[3]/table/tbody/tr[1]/td[3]"));
-    }
+    public ClientPage cliente= new ClientPage(Hook.driver);;
 
     @E("que ele selecione o botão de editar de um cliente cadastrado")
     public void abrirModalEditar() throws InterruptedException {
         Thread.sleep(1000);
-        elementBefore = PegaElemento().getText();
-        cliente = new ClientPage(Hook.driver);
         cliente.botaoEditarCliente.click();
     }
 

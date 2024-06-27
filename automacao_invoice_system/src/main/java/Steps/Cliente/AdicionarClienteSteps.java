@@ -10,12 +10,8 @@ import io.cucumber.java.pt.Entao;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-
-import java.util.List;
-
 public class AdicionarClienteSteps {
     public ClientPage cliente = new ClientPage(Hook.driver);;
-    public RateCardPage rateCard = new RateCardPage(Hook.driver);
 
     @Dado("Que o usuario esteja na tela de clientes")
     public void telaAdicionarCliente() throws  InterruptedException{

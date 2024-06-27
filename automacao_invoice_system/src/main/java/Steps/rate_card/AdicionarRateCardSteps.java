@@ -9,19 +9,17 @@ import io.cucumber.java.es.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 
 public class AdicionarRateCardSteps {
-    public ClientPage cliente;
-    public ProjectPage projeto;
-    public RateCardPage ratecard;
+    public ClientPage cliente = new ClientPage(Hook.driver);;
+    public ProjectPage projeto = new ProjectPage(Hook.driver);
+    public RateCardPage ratecard = new RateCardPage(Hook.driver);
 
     @Dado("que o usuário esteja na tela de Rate Cards")
     public void abrirTelaRateCard() throws InterruptedException {
-        cliente = new ClientPage(Hook.driver);
-        projeto = new ProjectPage(Hook.driver);
-        ratecard = new RateCardPage(Hook.driver);
-
         cliente.botaoClientes.click();
         Thread.sleep(2000);
         cliente.abrirCliente.click();
@@ -43,8 +41,18 @@ public class AdicionarRateCardSteps {
         ratecard.FimVigenciaRateCard.click();
         ratecard.FimVigenciaRateCard.sendKeys("01012025");
         ratecard.campoNumeroProposta.sendKeys("12345");
-        ratecard.botaoStatusRateCard.click();
     }
 
+    @Entao("o sistema adiciona um novo rate card")
+    public void validarEdicaoRateCard() throws Exception{
+        Thread.sleep(1000);
+        WebElement mensagemDeSucesso = Hook.driver.findElement(By.id("notistack-snackbar"));
+        if (mensagemDeSucesso.getText().equals("Rate Card criado com sucesso!")) {
+            System.out.println("Rate Card criado com sucesso!");
+        }else {
+            throw new Exception("Erro ao criar rate card");
+        }
+
+    }
 
 }

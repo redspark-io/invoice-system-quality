@@ -6,4 +6,4 @@ Funcionalidade: Rate Card
     E que o usuário clique no botão de adicionar rate card
     E que o usuário preencha todos os campos do modal de cadastro corretamente
     Quando clicar em salvar "adição de rate card"
-    #Então o sistema adiciona um novo rate card
+    Então o sistema adiciona um novo rate card

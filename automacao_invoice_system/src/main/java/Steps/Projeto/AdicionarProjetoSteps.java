@@ -10,39 +10,37 @@ import io.cucumber.java.pt.Entao;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.List;
-
 
 public class AdicionarProjetoSteps {
-    public ClientPage client;
-    public ProjectPage projeto;
+    public ClientPage client = new ClientPage(Hook.driver) ;
+    public ProjectPage projeto = new ProjectPage(Hook.driver);
 
-    public List<WebElement> elementsBefore(){
-        return Hook.driver.findElements(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[3]/table/tbody/tr"));
-    }
     @Dado("que o usuário esteja na tela de projetos")
     public void telaAdicionarProjeto() throws InterruptedException {
-        client = new ClientPage(Hook.driver);
         client.botaoClientes.click();
         Thread.sleep(2000);
         client.abrirCliente.click();
     }
 
     @E("que ele selecione o botão de adicionar projeto")
-    public void adicionarProjeto() throws InterruptedException {
-        System.out.println(elementsBefore().size());
-        projeto = new ProjectPage(Hook.driver);
+    public void adicionarProjeto(){
         projeto.botaoAdicionarProjeto.click();
     }
 
     @E("que ele preencha todos os campos do modal de cadastro corretamente")
     public void preencherCampos() {
         projeto.campoNomeProjeto.sendKeys(GeradorDados.gerarNomeAleatorio());
-        projeto.botaoStatusProjeto.click();
-        projeto.statusAtivo.click();
     }
+
     @Entao("o sistema adiciona o novo projeto")
-    public void verificaAdicao() throws Exception{
+    public void validarEdicaoRateCard() throws Exception{
+        Thread.sleep(1000);
+        WebElement mensagemDeSucesso = Hook.driver.findElement(By.id("notistack-snackbar"));
+        if (mensagemDeSucesso.getText().equals("Projeto criado com sucesso!")) {
+            System.out.println("Projeto criado com sucesso!!");
+        }else {
+            throw new Exception("Erro ao criar projeto");
+        }
 
     }
 }

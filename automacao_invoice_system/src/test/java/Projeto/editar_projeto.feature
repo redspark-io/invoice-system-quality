@@ -6,3 +6,4 @@ Funcionalidade: Projeto
     E que ele selecione o botão de editar
     E que ele preencha o modal de edição com os dados necessarios
     Quando clicar em salvar "edição de projeto"
+    Entao o sistema atualiza as informacoes do projeto
