@@ -20,4 +20,10 @@ public class GeradorDados {
         int id = random.nextInt(10000);
        return String.valueOf(id);
     }
+
+    public static String gerarAnoAleatorio(){
+        Random random = new Random();
+        int ano = random.nextInt((2024 - 2000) + 1) + 2000;
+        return String.valueOf(ano);
+    }
 }
