@@ -6,7 +6,7 @@ Funcionalidade: Período
   Cenário: Editar um Periodo cadastrado
 
     Dado que o usuário esteja logado no sistema na tela de Periodo
-    E que usuário clique no botão editar deu periodo já cadastrado
-    Quando o usuário preencher modal de edição com os dados corretos
-    E clicar em Salvar
+    E que usuário clique no botão editar de um periodo já cadastrado
+    E que o usuário preencha o modal de edição com os dados corretos
+    Quando clicar em salvar "edição periodo"
     Então o sistema atualiza um novo periodo

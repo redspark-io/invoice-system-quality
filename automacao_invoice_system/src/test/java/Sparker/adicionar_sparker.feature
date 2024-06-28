@@ -5,8 +5,8 @@
 Funcionalidade: Sparker
 
   Cenário: Cadastrar Sparker
-
-    Dado que o usuário esteja logado no sistema na tela de Sparker
-    Quando usuário clicar em Adicionar Sparker abre Modal para o preenchimento
-    E o usuário preenche modal
-    Então o usuário terá adicionado um Sparker com sucesso
+    Dado que o usuário esteja na tela de sparker
+    E que ele clique no botao de adicionar sparker
+    E que ele preenhca o modal de adição corretamente
+    Quando clicar em salvar "adição de sparker"
+    Entao o sistema realiza o cadastro do novo sparker

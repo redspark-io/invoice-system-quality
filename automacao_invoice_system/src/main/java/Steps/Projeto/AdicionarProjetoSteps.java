@@ -2,37 +2,45 @@ package Steps.Projeto;
 
 import PageObjects.ClientPage;
 import PageObjects.ProjectPage;
+import Steps.Tools.GeradorDados;
 import hooks.Hook;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.pt.E;
-import io.cucumber.java.pt.Quando;
-
-import static hooks.Hook.gerarNomeAleatorio;
+import io.cucumber.java.pt.Entao;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 
 public class AdicionarProjetoSteps {
-    public ClientPage client;
-    public ProjectPage projeto;
+    public ClientPage client = new ClientPage(Hook.driver) ;
+    public ProjectPage projeto = new ProjectPage(Hook.driver);
 
     @Dado("que o usuário esteja na tela de projetos")
     public void telaAdicionarProjeto() throws InterruptedException {
-        client = new ClientPage(Hook.driver);
-
         client.botaoClientes.click();
         Thread.sleep(2000);
         client.abrirCliente.click();
     }
 
     @E("que ele selecione o botão de adicionar projeto")
-    public void adicionarProjeto() throws InterruptedException {
-        projeto = new ProjectPage(Hook.driver);
+    public void adicionarProjeto(){
         projeto.botaoAdicionarProjeto.click();
     }
 
-    @Quando("ele preencher todos os campos do modal de cadastro corretamente")
+    @E("que ele preencha todos os campos do modal de cadastro corretamente")
     public void preencherCampos() {
-        projeto.campoNomeProjeto.sendKeys(gerarNomeAleatorio());
-        projeto.botaoStatusProjeto.click();
-        projeto.statusAtivo.click();
+        projeto.campoNomeProjeto.sendKeys(GeradorDados.gerarNomeAleatorio());
+    }
+
+    @Entao("o sistema adiciona o novo projeto")
+    public void validarEdicaoRateCard() throws Exception{
+        Thread.sleep(1000);
+        WebElement mensagemDeSucesso = Hook.driver.findElement(By.id("notistack-snackbar"));
+        if (mensagemDeSucesso.getText().equals("Projeto criado com sucesso!")) {
+            System.out.println("Projeto criado com sucesso!!");
+        }else {
+            throw new Exception("Erro ao criar projeto");
+        }
+
     }
 }
