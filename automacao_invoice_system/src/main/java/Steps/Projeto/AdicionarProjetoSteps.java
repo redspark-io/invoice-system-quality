@@ -1,6 +1,7 @@
 package Steps.Projeto;
 
 import PageObjects.ClientPage;
+import PageObjects.CommomPages;
 import PageObjects.ProjectPage;
 import Steps.Tools.GeradorDados;
 import hooks.Hook;
@@ -14,6 +15,7 @@ import org.openqa.selenium.WebElement;
 public class AdicionarProjetoSteps {
     public ClientPage client = new ClientPage(Hook.driver) ;
     public ProjectPage projeto = new ProjectPage(Hook.driver);
+    public CommomPages commom = new CommomPages(Hook.driver);
 
     @Dado("que o usuário esteja na tela de projetos")
     public void telaAdicionarProjeto() throws InterruptedException {
@@ -35,8 +37,7 @@ public class AdicionarProjetoSteps {
     @Entao("o sistema adiciona o novo projeto")
     public void validarEdicaoRateCard() throws Exception{
         Thread.sleep(1000);
-        WebElement mensagemDeSucesso = Hook.driver.findElement(By.id("notistack-snackbar"));
-        if (mensagemDeSucesso.getText().equals("Projeto criado com sucesso!")) {
+        if (commom.mensagemDeSucesso.getText().equals("Projeto criado com sucesso!")) {
             System.out.println("Projeto criado com sucesso!!");
         }else {
             throw new Exception("Erro ao criar projeto");

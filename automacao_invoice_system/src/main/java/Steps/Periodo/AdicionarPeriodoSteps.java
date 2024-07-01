@@ -1,5 +1,6 @@
 package Steps.Periodo;
 
+import PageObjects.CommomPages;
 import PageObjects.PeriodoPage;
 import hooks.Hook;
 import io.cucumber.java.pt.Dado;
@@ -12,6 +13,7 @@ import org.openqa.selenium.WebElement;
 
 public class AdicionarPeriodoSteps {
     public PeriodoPage periodo = new PeriodoPage(Hook.driver);
+    public CommomPages commom = new CommomPages(Hook.driver);
 
     @Dado("que o usuário esteja na tela de periodo")
     public void abrirTelaPeriodo(){
@@ -36,8 +38,7 @@ public class AdicionarPeriodoSteps {
     @Entao("o sistema cadastra um novo periodo")
     public void verificaAdicaoPeriodo() throws Exception{
         Thread.sleep(1000);
-        WebElement mensagemDeSucesso = Hook.driver.findElement(By.id("notistack-snackbar"));
-        if (mensagemDeSucesso.getText().equals("Período criado com sucesso!")) {
+        if (commom.mensagemDeSucesso.getText().equals("Período criado com sucesso!")) {
             System.out.println("Período criado com sucesso!");
         }else {
             throw new Exception("Erro ao criar Periodo");

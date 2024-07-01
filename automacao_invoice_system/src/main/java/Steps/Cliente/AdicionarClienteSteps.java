@@ -1,6 +1,7 @@
 package Steps.Cliente;
 
 import PageObjects.ClientPage;
+import PageObjects.CommomPages;
 import PageObjects.RateCardPage;
 import Steps.Tools.GeradorDados;
 import hooks.Hook;
@@ -11,7 +12,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class AdicionarClienteSteps {
-    public ClientPage cliente = new ClientPage(Hook.driver);;
+    public ClientPage cliente = new ClientPage(Hook.driver);
+    public CommomPages commom = new CommomPages(Hook.driver);
 
     @Dado("Que o usuario esteja na tela de clientes")
     public void telaAdicionarCliente() throws  InterruptedException{
@@ -34,8 +36,7 @@ public class AdicionarClienteSteps {
     @Entao("o sistema adiciona o novo cliente")
     public void validarEdicaoSparker() throws Exception{
         Thread.sleep(1000);
-        WebElement mensagemDeSucesso = Hook.driver.findElement(By.id("notistack-snackbar"));
-        if (mensagemDeSucesso.getText().equals("Perfil de cliente criado com sucesso!")) {
+        if (commom.mensagemDeSucesso.getText().equals("Perfil de cliente criado com sucesso!")) {
             System.out.println("Perfil de cliente criado com sucesso!");
         }else {
             throw new Exception("Erro ao criar perfil de cliente");
