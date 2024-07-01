@@ -1,5 +1,6 @@
 package Steps.rate_card;
 
+import PageObjects.CommomPages;
 import PageObjects.RateCardPage;
 import PageObjects.ClientPage;
 import PageObjects.ProjectPage;
@@ -17,6 +18,7 @@ public class AdicionarRateCardSteps {
     public ClientPage cliente = new ClientPage(Hook.driver);;
     public ProjectPage projeto = new ProjectPage(Hook.driver);
     public RateCardPage ratecard = new RateCardPage(Hook.driver);
+    public CommomPages commom = new CommomPages(Hook.driver);
 
     @Dado("que o usuário esteja na tela de Rate Cards")
     public void abrirTelaRateCard() throws InterruptedException {
@@ -46,8 +48,7 @@ public class AdicionarRateCardSteps {
     @Entao("o sistema adiciona um novo rate card")
     public void validarEdicaoRateCard() throws Exception{
         Thread.sleep(1000);
-        WebElement mensagemDeSucesso = Hook.driver.findElement(By.id("notistack-snackbar"));
-        if (mensagemDeSucesso.getText().equals("Rate Card criado com sucesso!")) {
+        if (commom.mensagemDeSucesso.getText().equals("Rate Card criado com sucesso!")) {
             System.out.println("Rate Card criado com sucesso!");
         }else {
             throw new Exception("Erro ao criar rate card");

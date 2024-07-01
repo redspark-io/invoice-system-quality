@@ -1,9 +1,6 @@
 package Steps.Funcao;
 
-import PageObjects.ClientPage;
-import PageObjects.FuncaoPage;
-import PageObjects.ProjectPage;
-import PageObjects.RateCardPage;
+import PageObjects.*;
 import hooks.Hook;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
@@ -16,6 +13,7 @@ public class AdicionarFuncaoSteps {
     public ProjectPage projeto = new ProjectPage(Hook.driver);
     public RateCardPage rateCard = new RateCardPage(Hook.driver);
     public FuncaoPage funcao = new FuncaoPage(Hook.driver);
+    public CommomPages commom = new CommomPages(Hook.driver);
 
     @Dado("que o usuário esteja na tela de função")
     public void telaAdicionarFuncao() throws InterruptedException{
@@ -45,8 +43,7 @@ public class AdicionarFuncaoSteps {
     @Entao("o sistema cadastra uma nova função")
     public void verificarAdicaoFuncao() throws Exception {
         Thread.sleep(1000);
-        WebElement mensagemDeSucesso = Hook.driver.findElement(By.id("notistack-snackbar"));
-        if (mensagemDeSucesso.getText().equals("Função criada com sucesso!")) {
+        if (commom.mensagemDeSucesso.getText().equals("Função criada com sucesso!")) {
             System.out.println("Função criada com sucesso!");
         }else {
             throw new Exception("Erro ao criar função");

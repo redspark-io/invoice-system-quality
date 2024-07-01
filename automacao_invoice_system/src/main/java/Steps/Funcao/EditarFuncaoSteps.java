@@ -1,5 +1,6 @@
 package Steps.Funcao;
 
+import PageObjects.CommomPages;
 import PageObjects.FuncaoPage;
 import hooks.Hook;
 import io.cucumber.java.pt.E;
@@ -10,6 +11,7 @@ import org.openqa.selenium.WebElement;
 
 public class EditarFuncaoSteps {
     public FuncaoPage funcao = new FuncaoPage(Hook.driver);
+    public CommomPages commom = new CommomPages(Hook.driver);
 
     @E("que ele clique no botão de editar uma função já cadastrada")
     public void abrirModalEdicaoFuncao() throws InterruptedException {
@@ -35,8 +37,7 @@ public class EditarFuncaoSteps {
     @Entao("o sistema atualiza os dados da função com sucesso")
     public void verificarAdicaoFuncao() throws Exception {
         Thread.sleep(1000);
-        WebElement mensagemDeSucesso = Hook.driver.findElement(By.id("notistack-snackbar"));
-        if (mensagemDeSucesso.getText().equals("Função alterada com sucesso!")) {
+        if (commom.mensagemDeSucesso.getText().equals("Função alterada com sucesso!")) {
             System.out.println("Função alterada com sucesso!");
         }else {
             throw new Exception("Erro ao alterar função");

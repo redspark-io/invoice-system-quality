@@ -1,5 +1,6 @@
 package Steps.sparker;
 
+import PageObjects.CommomPages;
 import PageObjects.SparkerPage;
 import Steps.Tools.GeradorDados;
 import hooks.Hook;
@@ -12,6 +13,7 @@ import org.openqa.selenium.WebElement;
 
 public class EditarSparkerSteps {
     public SparkerPage sparker = new SparkerPage(Hook.driver);
+    public CommomPages commom = new CommomPages(Hook.driver);
 
     @E("que o usuario clique no botao de editar sparker")
     public void abrirModalEditarSparker() throws InterruptedException{
@@ -31,8 +33,7 @@ public class EditarSparkerSteps {
     @Entao("o sistema atualiza sparker com os dados informados")
     public void validarEdicaoSparker() throws Exception{
         Thread.sleep(1000);
-        WebElement mensagemDeSucesso = Hook.driver.findElement(By.id("notistack-snackbar"));
-        if (mensagemDeSucesso.getText().equals("Sparker alterado com sucesso!")) {
+        if (commom.mensagemDeSucesso.getText().equals("Sparker alterado com sucesso!")) {
            System.out.println("Sparker alterado com sucesso!");
         }else {
             throw new Exception("Erro ao alterar sparker");

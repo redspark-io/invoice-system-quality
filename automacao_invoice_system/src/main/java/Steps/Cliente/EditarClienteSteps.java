@@ -1,5 +1,6 @@
 package Steps.Cliente;
 
+import PageObjects.CommomPages;
 import Steps.Tools.GeradorDados;
 import hooks.Hook;
 import PageObjects.ClientPage;
@@ -11,7 +12,8 @@ import org.openqa.selenium.WebElement;
 
 
 public class EditarClienteSteps {
-    public ClientPage cliente= new ClientPage(Hook.driver);;
+    public ClientPage cliente= new ClientPage(Hook.driver);
+    public CommomPages commom = new CommomPages(Hook.driver);;
 
     @E("que ele selecione o botão de editar de um cliente cadastrado")
     public void abrirModalEditar() throws InterruptedException {
@@ -40,8 +42,7 @@ public class EditarClienteSteps {
     @Entao("o sistema salva a edicao do cliente")
     public void validarEdicaoSparker() throws Exception{
         Thread.sleep(1000);
-        WebElement mensagemDeSucesso = Hook.driver.findElement(By.id("notistack-snackbar"));
-        if (mensagemDeSucesso.getText().equals("Perfil de cliente alterado com sucesso!")) {
+        if (commom.mensagemDeSucesso.getText().equals("Perfil de cliente alterado com sucesso!")) {
             System.out.println("Perfil de cliente alterado com sucesso!");
         }else {
             throw new Exception("Erro ao editar perfil de cliente");

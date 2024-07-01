@@ -1,5 +1,6 @@
 package Steps.rate_card;
 
+import PageObjects.CommomPages;
 import PageObjects.RateCardPage;
 import Steps.Tools.GeradorDados;
 import hooks.Hook;
@@ -12,7 +13,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 public class EditarRateCardSteps {
-    public RateCardPage ratecard = new RateCardPage(Hook.driver);;
+    public RateCardPage ratecard = new RateCardPage(Hook.driver);
+    public CommomPages commom = new CommomPages(Hook.driver);
 
     @E("que ele selecione o botão de editar um rate card cadastrado")
     public void abrirModalEditarRateCard() throws InterruptedException {
@@ -38,8 +40,7 @@ public class EditarRateCardSteps {
     @Entao("o sistema atualiza o rate card")
     public void validarEdicaoRateCard() throws Exception{
         Thread.sleep(1000);
-        WebElement mensagemDeSucesso = Hook.driver.findElement(By.id("notistack-snackbar"));
-        if (mensagemDeSucesso.getText().equals("Rate Card alterado com sucesso!")) {
+        if (commom.mensagemDeSucesso.getText().equals("Rate Card alterado com sucesso!")) {
             System.out.println("Rate Card alterado com sucesso!");
         }else {
             throw new Exception("Erro ao editar rate card");

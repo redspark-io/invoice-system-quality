@@ -1,5 +1,6 @@
 package Steps.Periodo;
 
+import PageObjects.CommomPages;
 import PageObjects.PeriodoPage;
 import Steps.Tools.GeradorDados;
 import hooks.Hook;
@@ -12,6 +13,7 @@ import org.openqa.selenium.WebElement;
 
 public class EditarPeriodoSteps {
     public PeriodoPage periodo = new PeriodoPage(Hook.driver);
+    public CommomPages commom = new CommomPages(Hook.driver);
 
     @E("que ele clique no botão editar de um periodo cadastrado")
     public void abrirModalEdicao() throws InterruptedException {
@@ -40,8 +42,7 @@ public class EditarPeriodoSteps {
     @Entao("o sistema atualiza o periodo")
     public void verificaEdicaoPeriodo() throws Exception {
         Thread.sleep(1000);
-        WebElement mensagemDeSucesso = Hook.driver.findElement(By.id("notistack-snackbar"));
-        if (mensagemDeSucesso.getText().equals("Período alterado com sucesso!")) {
+        if (commom.mensagemDeSucesso.getText().equals("Período alterado com sucesso!")) {
             System.out.println("Período alterado com sucesso!");
         }else {
             throw new Exception("Erro ao editar Periodo");
