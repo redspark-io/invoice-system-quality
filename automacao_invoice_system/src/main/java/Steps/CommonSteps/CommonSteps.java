@@ -10,6 +10,7 @@ public class CommonSteps {
     public RateCardPage ratecard = new RateCardPage(Hook.driver);
     public SparkerPage sparker = new SparkerPage(Hook.driver);
     public PeriodoPage periodo = new PeriodoPage(Hook.driver);
+    public FuncaoPage funcao = new FuncaoPage(Hook.driver);
 
     @Quando("clicar em salvar {string}")
     public void salvar(String tipo) throws Exception {
@@ -34,6 +35,10 @@ public class CommonSteps {
             periodo.botaoSalvarAdicaoPeriodo.click();
         } else if (tipo.equals("edição periodo")) {
             periodo.botaoSalvarEdicaoPeriodo.click();
+        } else if (tipo.equals("adição função")) {
+            funcao.botaoSalvarAdicaoFuncao.click();
+        } else if (tipo.equals("edição função")) {
+            funcao.botaoSalvarEdicaoFuncao.click();
         }
     }
 }

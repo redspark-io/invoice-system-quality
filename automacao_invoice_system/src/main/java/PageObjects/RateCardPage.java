@@ -9,6 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 public class RateCardPage {
     public RateCardPage(WebDriver driver) {PageFactory.initElements(driver, this);}
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[3]/table/tbody/tr[1]")
+    public WebElement abrirRateCard;
+
     @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[1]/div[2]/button")
     public WebElement botaoAdicionarRateCard;
 

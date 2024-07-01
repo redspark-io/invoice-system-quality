@@ -9,6 +9,3 @@ Funcionalidade: Período
     E que ele preencha os campos obrigatórios do modal
     Quando clicar em salvar "adição periodo"
     Então o sistema cadastra um novo periodo
-
-
-
