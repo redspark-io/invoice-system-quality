@@ -4,10 +4,9 @@
 Funcionalidade: Período
 
   Cenário: Cadastrar um Periodo
-
-    Dado que o usuário na tela de Periodo
-    E que o usuário clique em adicionar periodo
-    E que o usuário preencha os campos obrigatórios do modal
+    Dado que o usuário esteja na tela de periodo
+    E que ele clique em adicionar periodo
+    E que ele preencha os campos obrigatórios do modal
     Quando clicar em salvar "adição periodo"
     Então o sistema cadastra um novo periodo
 

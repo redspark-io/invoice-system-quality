@@ -1,5 +1,6 @@
 package Steps.Projeto;
 
+import PageObjects.CommomPages;
 import PageObjects.ProjectPage;
 import Steps.Tools.GeradorDados;
 import hooks.Hook;
@@ -12,6 +13,7 @@ import org.openqa.selenium.WebElement;
 
 public class EditarProjetoSteps {
     public ProjectPage projeto = new ProjectPage(Hook.driver);
+    public CommomPages commom = new CommomPages(Hook.driver);
 
 
     @E("que ele selecione o botão de editar")
@@ -30,8 +32,7 @@ public class EditarProjetoSteps {
     @Entao("o sistema atualiza as informacoes do projeto")
     public void validarEdicaoRateCard() throws Exception{
         Thread.sleep(1000);
-        WebElement mensagemDeSucesso = Hook.driver.findElement(By.id("notistack-snackbar"));
-        if (mensagemDeSucesso.getText().equals("Projeto alterado com sucesso!")) {
+        if (commom.mensagemDeSucesso.getText().equals("Projeto alterado com sucesso!")) {
             System.out.println("Projeto alterado com sucesso!!");
         }else {
             throw new Exception("Erro ao alterar projeto");

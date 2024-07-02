@@ -1,25 +1,18 @@
 package Steps.CommonSteps;
 
-import PageObjects.ClientPage;
-import PageObjects.ProjectPage;
-import PageObjects.RateCardPage;
-import PageObjects.SparkerPage;
+import PageObjects.*;
 import hooks.Hook;
 import io.cucumber.java.pt.Quando;
 
 public class CommonSteps {
-    public ProjectPage projeto;
-    public ClientPage cliente;
-    public RateCardPage ratecard;
-    public SparkerPage sparker;
+    public ProjectPage projeto = new ProjectPage(Hook.driver);
+    public ClientPage cliente = new ClientPage(Hook.driver);
+    public RateCardPage ratecard = new RateCardPage(Hook.driver);
+    public SparkerPage sparker = new SparkerPage(Hook.driver);
+    public PeriodoPage periodo = new PeriodoPage(Hook.driver);
 
     @Quando("clicar em salvar {string}")
     public void salvar(String tipo) throws Exception {
-        projeto = new ProjectPage(Hook.driver);
-        cliente = new ClientPage(Hook.driver);
-        ratecard = new RateCardPage(Hook.driver);
-        sparker = new SparkerPage(Hook.driver);
-
         if (tipo.equals("edição de projeto")) {
             projeto.botaoSalvarProjetoEditar.click();
         } else if (tipo.equals("adição de projeto")) {
@@ -37,6 +30,10 @@ public class CommonSteps {
             sparker.botaoSalvarAdicaoSparker.click();
         } else if (tipo.equals("edição sparker")) {
             sparker.botaoSalvarEdicaoSparker.click();
+        } else if (tipo.equals("adição periodo")) {
+            periodo.botaoSalvarAdicaoPeriodo.click();
+        } else if (tipo.equals("edição periodo")) {
+            periodo.botaoSalvarEdicaoPeriodo.click();
         }
     }
 }
