@@ -13,7 +13,7 @@ import org.openqa.selenium.WebElement;
 
 public class EditarClienteSteps {
     public ClientPage cliente= new ClientPage(Hook.driver);
-    public CommomPages commom = new CommomPages(Hook.driver);;
+    public CommomPages commom = new CommomPages(Hook.driver);
 
     @E("que ele selecione o botão de editar de um cliente cadastrado")
     public void abrirModalEditar() throws InterruptedException {

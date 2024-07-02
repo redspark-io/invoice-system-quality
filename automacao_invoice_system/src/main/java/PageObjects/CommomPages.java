@@ -13,6 +13,7 @@ public class CommomPages {
         PageFactory.initElements(driver, this);
     }
     @FindBy(how = How.ID, using = "notistack-snackbar")
-     public WebElement mensagemDeSucesso;
+    public WebElement mensagemDeSucesso;
 
 }
+
