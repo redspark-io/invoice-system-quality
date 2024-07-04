@@ -7,7 +7,6 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import Steps.Tools.GeradorDados;
 import io.cucumber.java.pt.Entao;
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 

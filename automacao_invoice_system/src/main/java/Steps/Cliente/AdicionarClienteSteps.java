@@ -2,7 +2,6 @@ package Steps.Cliente;
 
 import PageObjects.ClientPage;
 import PageObjects.CommomPages;
-import PageObjects.RateCardPage;
 import Steps.Tools.GeradorDados;
 import hooks.Hook;
 import io.cucumber.java.pt.Dado;

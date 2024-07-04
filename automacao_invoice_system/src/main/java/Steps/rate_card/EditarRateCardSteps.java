@@ -14,7 +14,7 @@ import org.openqa.selenium.WebElement;
 
 public class EditarRateCardSteps {
     public RateCardPage ratecard = new RateCardPage(Hook.driver);
-    public CommomPages commom = new CommomPages(Hook.driver);;
+    public CommomPages commom = new CommomPages(Hook.driver);
 
     @E("que ele selecione o botão de editar um rate card cadastrado")
     public void abrirModalEditarRateCard() throws InterruptedException {

@@ -16,3 +16,4 @@ public class CommomPages {
     public WebElement mensagemDeSucesso;
 
 }
+
