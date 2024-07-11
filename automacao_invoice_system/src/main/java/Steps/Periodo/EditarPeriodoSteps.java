@@ -24,10 +24,10 @@ public class EditarPeriodoSteps {
     @E("que ele preencha o modal de edição de periodo com os dados corretos")
     public void preencherModalEdicao(){
         periodo.campoAnoReferencia.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-        periodo.campoAnoReferencia.sendKeys(GeradorDados.gerarAnoAleatorio());
+        periodo.campoAnoReferencia.sendKeys(GeradorDados.gerarAnoAleatorio(2000, 2024));
 
         periodo.campoMesReferencia.click();
-        periodo.campoMesReferencia.click();
+        periodo.campoMesReferenciaFevereiro.click();
 
         periodo.campoHorasUteis.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
         periodo.campoHorasUteis.sendKeys("210");

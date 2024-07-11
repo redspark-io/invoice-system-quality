@@ -26,12 +26,12 @@ public class EditarClienteSteps {
         //limpa o campo e escreve um nome aleatorio
         cliente.campoNomeEmperesa.sendKeys(Keys.CONTROL + "a");
         cliente.campoNomeEmperesa.sendKeys(Keys.DELETE);
-        cliente.campoNomeEmperesa.sendKeys(GeradorDados.gerarNomeAleatorio());
+        cliente.campoNomeEmperesa.sendKeys(GeradorDados.gerarNomeAleatorio(10));
 
         //limpa o campo e escreve um nome aleatorio
         cliente.campoInvoiceId.sendKeys(Keys.CONTROL + "a");
         cliente.campoInvoiceId.sendKeys(Keys.DELETE);
-        cliente.campoInvoiceId.sendKeys(GeradorDados.gerarNomeAleatorio());
+        cliente.campoInvoiceId.sendKeys(GeradorDados.gerarNomeAleatorio(10));
     }
     @Entao("o sistema salva a edicao do cliente")
     public void validarEdicaoSparker() throws Exception{

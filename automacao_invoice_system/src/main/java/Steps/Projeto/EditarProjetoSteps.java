@@ -26,7 +26,7 @@ public class EditarProjetoSteps {
     public void preenhcerModal() throws InterruptedException {
         projeto.campoNomeProjeto.sendKeys(Keys.CONTROL + "a");
         projeto.campoNomeProjeto.sendKeys(Keys.DELETE);
-        projeto.campoNomeProjeto.sendKeys(GeradorDados.gerarNomeAleatorio());
+        projeto.campoNomeProjeto.sendKeys(GeradorDados.gerarNomeAleatorio(10));
 
     }
     @Entao("o sistema atualiza as informacoes do projeto")

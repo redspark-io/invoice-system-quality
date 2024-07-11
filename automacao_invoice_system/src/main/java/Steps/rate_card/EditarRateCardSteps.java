@@ -27,7 +27,7 @@ public class EditarRateCardSteps {
         ratecard.campoDescricaoRateCard.click();
         ratecard.campoDescricaoRateCard.sendKeys(Keys.CONTROL + "a");
         ratecard.campoDescricaoRateCard.sendKeys(Keys.DELETE);
-        ratecard.campoDescricaoRateCard.sendKeys(GeradorDados.gerarNomeAleatorio());
+        ratecard.campoDescricaoRateCard.sendKeys(GeradorDados.gerarNomeAleatorio(10));
         ratecard.InicioVigenciaRateCard.click();
         ratecard.InicioVigenciaRateCard.sendKeys("02022024");
         ratecard.FimVigenciaRateCard.click();

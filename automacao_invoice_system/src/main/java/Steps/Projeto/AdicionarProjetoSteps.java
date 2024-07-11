@@ -32,7 +32,7 @@ public class AdicionarProjetoSteps {
 
     @E("que ele preencha todos os campos do modal de cadastro corretamente")
     public void preencherCampos() {
-        projeto.campoNomeProjeto.sendKeys(GeradorDados.gerarNomeAleatorio());
+        projeto.campoNomeProjeto.sendKeys(GeradorDados.gerarNomeAleatorio(10));
     }
 
     @Entao("o sistema adiciona o novo projeto")

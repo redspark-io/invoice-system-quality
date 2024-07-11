@@ -14,7 +14,7 @@ public class AdicionarClienteSteps {
     public ClientPage cliente = new ClientPage(Hook.driver);
     public CommomPages commom = new CommomPages(Hook.driver);
 
-    @E("Que o usuario esteja na tela de clientes")
+    @E("que o usuario esteja na tela de clientes")
     public void telaAdicionarCliente() throws  InterruptedException{
         Thread.sleep(1000);
         cliente.botaoClientes.click();
@@ -27,8 +27,8 @@ public class AdicionarClienteSteps {
 
     @E("que ele preencha todos os campos do modal de cadastro corretamente")
     public void preencherCampos(){
-        cliente.campoInvoiceId.sendKeys(GeradorDados.gerarNomeAleatorio());
-        cliente.campoNomeEmperesa.sendKeys(GeradorDados.gerarNomeAleatorio());
+        cliente.campoInvoiceId.sendKeys(GeradorDados.gerarNomeAleatorio(5));
+        cliente.campoNomeEmperesa.sendKeys(GeradorDados.gerarNomeAleatorio(5));
     }
 
     @Entao("o sistema adiciona o novo cliente")

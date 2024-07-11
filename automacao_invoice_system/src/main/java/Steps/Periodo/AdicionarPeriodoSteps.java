@@ -28,7 +28,7 @@ public class AdicionarPeriodoSteps {
     @E("que ele preencha os campos obrigatórios do modal")
     public void preencherModalAdicaoPeriodo() throws InterruptedException{
         Thread.sleep(2000);
-        periodo.campoAnoReferencia.sendKeys(GeradorDados.gerarAnoAleatorio());
+        periodo.campoAnoReferencia.sendKeys(GeradorDados.gerarAnoAleatorio(2000, 2024));
         periodo.campoMesReferencia.click();
         periodo.campoMesReferenciaJaneiro.click();
         periodo.campoDiasUteis.sendKeys("30");

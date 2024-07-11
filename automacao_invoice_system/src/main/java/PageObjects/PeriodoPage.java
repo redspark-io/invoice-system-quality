@@ -36,6 +36,9 @@ public class PeriodoPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"menu-referenceMonth\"]/div[3]/ul/li[1]")
     public WebElement campoMesReferenciaJaneiro;
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"menu-referenceMonth\"]/div[3]/ul/li[2]")
+    public WebElement campoMesReferenciaFevereiro;
+
     @FindBy(how = How.NAME, using = "observations")
     public WebElement campoObservacao;
 

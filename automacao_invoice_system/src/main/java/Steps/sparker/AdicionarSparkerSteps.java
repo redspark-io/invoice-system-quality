@@ -29,7 +29,7 @@ public class AdicionarSparkerSteps {
     @E("que ele preenhca o modal de adição corretamente")
     public void preencherModalAdicionarSparker() {
         sparker.campoIdSparker.sendKeys(GeradorDados.gerarIdAleatorio());
-        sparker.campoNomeSparker.sendKeys(GeradorDados.gerarNomeAleatorio());
+        sparker.campoNomeSparker.sendKeys(GeradorDados.gerarNomeAleatorio(10));
         sparker.campoDataDeNascimentoSparker.sendKeys("01012006");
     }
 
