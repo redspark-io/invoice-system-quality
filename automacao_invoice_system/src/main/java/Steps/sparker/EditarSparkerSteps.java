@@ -25,8 +25,8 @@ public class EditarSparkerSteps {
     public void preenhcerEdicaoSparker() {
         sparker.campoNomeSparker.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
         sparker.campoNomeSparker.sendKeys(GeradorDados.gerarNomeAleatorio());
-        sparker.campoIdSparkerEditar.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-        sparker.campoIdSparkerEditar.sendKeys(GeradorDados.gerarIdAleatorio());
+        sparker.campoIdSparker.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+        sparker.campoIdSparker.sendKeys(GeradorDados.gerarIdAleatorio());
         sparker.campoDataDeNascimentoSparker.sendKeys("01012005");
     }
 

@@ -17,27 +17,21 @@ public class EditarClienteSteps {
 
     @E("que ele selecione o botão de editar de um cliente cadastrado")
     public void abrirModalEditar() throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         cliente.botaoEditarCliente.click();
     }
 
     @E("que ele preencha o modal de edição de cliente com os dados necessarios")
     public void preencherModalEditar() throws Exception{
         //limpa o campo e escreve um nome aleatorio
-        cliente.campoNomeEmpresaEditar.sendKeys(Keys.CONTROL + "a");
-        cliente.campoNomeEmpresaEditar.sendKeys(Keys.DELETE);
-        cliente.campoNomeEmpresaEditar.sendKeys("teste");
+        cliente.campoNomeEmperesa.sendKeys(Keys.CONTROL + "a");
+        cliente.campoNomeEmperesa.sendKeys(Keys.DELETE);
+        cliente.campoNomeEmperesa.sendKeys(GeradorDados.gerarNomeAleatorio());
 
         //limpa o campo e escreve um nome aleatorio
-        cliente.campoInvoiceIdEditar.sendKeys(Keys.CONTROL + "a");
-        cliente.campoInvoiceIdEditar.sendKeys(Keys.DELETE);
-        cliente.campoInvoiceIdEditar.sendKeys(GeradorDados.gerarNomeAleatorio());
-
-        //muda o status do cliente
-        cliente.botaoStatusClienteEditar.click();
-        cliente.botaoStatusInativoEditar.click();
-
-
+        cliente.campoInvoiceId.sendKeys(Keys.CONTROL + "a");
+        cliente.campoInvoiceId.sendKeys(Keys.DELETE);
+        cliente.campoInvoiceId.sendKeys(GeradorDados.gerarNomeAleatorio());
     }
     @Entao("o sistema salva a edicao do cliente")
     public void validarEdicaoSparker() throws Exception{

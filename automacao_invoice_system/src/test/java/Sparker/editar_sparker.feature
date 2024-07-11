@@ -5,7 +5,8 @@
 Funcionalidade: Sparker
 
   Cenário: Editar Sparker
-    Dado que o usuário esteja na tela de sparker
+    Dado que o usuario esteja logado
+    E que o usuário esteja na tela de sparker
     E que o usuario clique no botao de editar sparker
     E que o usuário preencha o modal de edição com os dados corretos
     Quando clicar em salvar "edição sparker"

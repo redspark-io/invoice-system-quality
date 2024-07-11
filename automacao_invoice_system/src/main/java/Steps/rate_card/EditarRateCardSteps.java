@@ -24,17 +24,17 @@ public class EditarRateCardSteps {
 
     @E("que o usuário preencher o modal de edição com os campos necessários")
     public void preencherModalEditarRateCard(){
-        ratecard.campoDescricaoRateCardEditar.click();
-        ratecard.campoDescricaoRateCardEditar.sendKeys(Keys.CONTROL + "a");
-        ratecard.campoDescricaoRateCardEditar.sendKeys(Keys.DELETE);
-        ratecard.campoDescricaoRateCardEditar.sendKeys(GeradorDados.gerarNomeAleatorio());
-        ratecard.InicioVigenciaRateCardEditar.click();
-        ratecard.InicioVigenciaRateCardEditar.sendKeys("02022024");
-        ratecard.FimVigenciaRateCardEditar.click();
-        ratecard.FimVigenciaRateCardEditar.sendKeys("02022025");
-        ratecard.campoNumeroPropostaEditar.click();
-        ratecard.campoNumeroPropostaEditar.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-        ratecard.campoNumeroPropostaEditar.sendKeys("54321");
+        ratecard.campoDescricaoRateCard.click();
+        ratecard.campoDescricaoRateCard.sendKeys(Keys.CONTROL + "a");
+        ratecard.campoDescricaoRateCard.sendKeys(Keys.DELETE);
+        ratecard.campoDescricaoRateCard.sendKeys(GeradorDados.gerarNomeAleatorio());
+        ratecard.InicioVigenciaRateCard.click();
+        ratecard.InicioVigenciaRateCard.sendKeys("02022024");
+        ratecard.FimVigenciaRateCard.click();
+        ratecard.FimVigenciaRateCard.sendKeys("02022025");
+        ratecard.campoNumeroProposta.click();
+        ratecard.campoNumeroProposta.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+        ratecard.campoNumeroProposta.sendKeys("54321");
     }
 
     @Entao("o sistema atualiza o rate card")

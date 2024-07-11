@@ -2,8 +2,8 @@
 # encoding: UTF-8
   Funcionalidade: Função
     Cenário: cadastrar Função
-
-      Dado que o usuário esteja na tela de função
+      Dado que o usuario esteja logado
+      E que o usuário esteja na tela de função
       E que ele clique no botão de adicionar
       E que ele preencha todos os campos do modal de cadastro corretamente
       Quando clicar em salvar "adição função"

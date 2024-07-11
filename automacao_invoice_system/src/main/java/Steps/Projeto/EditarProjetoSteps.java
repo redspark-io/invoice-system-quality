@@ -24,9 +24,9 @@ public class EditarProjetoSteps {
 
     @E("que ele preencha o modal de edição com os dados necessarios")
     public void preenhcerModal() throws InterruptedException {
-        projeto.campoNomeProjetoEditar.sendKeys(Keys.CONTROL + "a");
-        projeto.campoNomeProjetoEditar.sendKeys(Keys.DELETE);
-        projeto.campoNomeProjetoEditar.sendKeys(GeradorDados.gerarNomeAleatorio());
+        projeto.campoNomeProjeto.sendKeys(Keys.CONTROL + "a");
+        projeto.campoNomeProjeto.sendKeys(Keys.DELETE);
+        projeto.campoNomeProjeto.sendKeys(GeradorDados.gerarNomeAleatorio());
 
     }
     @Entao("o sistema atualiza as informacoes do projeto")

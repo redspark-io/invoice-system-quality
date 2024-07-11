@@ -14,8 +14,9 @@ public class AdicionarClienteSteps {
     public ClientPage cliente = new ClientPage(Hook.driver);
     public CommomPages commom = new CommomPages(Hook.driver);
 
-    @Dado("Que o usuario esteja na tela de clientes")
+    @E("Que o usuario esteja na tela de clientes")
     public void telaAdicionarCliente() throws  InterruptedException{
+        Thread.sleep(1000);
         cliente.botaoClientes.click();
     }
 
@@ -28,8 +29,6 @@ public class AdicionarClienteSteps {
     public void preencherCampos(){
         cliente.campoInvoiceId.sendKeys(GeradorDados.gerarNomeAleatorio());
         cliente.campoNomeEmperesa.sendKeys(GeradorDados.gerarNomeAleatorio());
-        cliente.botaoStatusCliente.click();
-        cliente.botaoStatusAtivo.click();
     }
 
     @Entao("o sistema adiciona o novo cliente")

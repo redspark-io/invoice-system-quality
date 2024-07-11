@@ -1,6 +1,5 @@
 package PageObjects;
 
-import io.cucumber.java.ja.且つ;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,44 +9,21 @@ import org.openqa.selenium.support.PageFactory;
 public class SparkerPage {
     public SparkerPage(WebDriver driver) {PageFactory.initElements(driver, this);}
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div[1]/div/ul/div[6]/a")
+    @FindBy(how = How.NAME, using = "sideBarMenuItem-Sparkers")
     public WebElement botaoSparker;
 
-    // adição de sparker
-    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[1]/div[2]/button")
+    @FindBy(how = How.NAME, using = "createButton-Sparker")
     public WebElement botaoAdicionarSparker;
 
-    @FindBy(how = How.XPATH, using = "/html/body/div[2]/div[3]/div/form/div[1]/div/div[1]/div/div/input")
-    public WebElement campoIdSparker;
-
-    @FindBy(how = How.XPATH, using = "/html/body/div[2]/div[3]/div/form/div[1]/div/div[2]/div/div/input")
-    public WebElement campoNomeSparker;
-
-    @FindBy(how = How.XPATH, using = "/html/body/div[2]/div[3]/div/form/div[1]/div/div[3]/div/div/input")
-    public WebElement campoDataDeNascimentoSparker;
-
-    @FindBy(how = How.XPATH, using = "/html/body/div[2]/div[3]/div/form/div[2]/div/div[1]/button")
-    public WebElement botaoSalvarAdicaoSparker;
-
-    @FindBy(how = How.XPATH, using = "/html/body/div[2]/div[3]/div/form/div[2]/div/div[2]/button")
-    public WebElement botaoCancelarAdicaoSparker;
-
-    // edição de sparker
-    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[3]/table/tbody/tr[6]/td[4]/div/button")
+    @FindBy(how = How.NAME, using = "Editar")
     public WebElement botaoEditarSparker;
 
-    @FindBy(how = How.XPATH, using = "/html/body/div[2]/div[3]/div/form/div[1]/div/div[1]/div/div/input")
-    public WebElement campoIdSparkerEditar;
+    @FindBy(how = How.NAME, using = "sparkerIdRh")
+    public WebElement campoIdSparker;
 
-    @FindBy(how = How.XPATH, using = "/html/body/div[2]/div[3]/div/form/div[1]/div/div[2]/div/div/input")
-    public WebElement getCampoNomeSparkerEditar;
+    @FindBy(how = How.NAME, using = "name")
+    public WebElement campoNomeSparker;
 
-    @FindBy(how = How.XPATH, using = "/html/body/div[2]/div[3]/div/form/div[1]/div/div[3]/div/div/input")
-    public WebElement campoDataDeNascimentoSparkerEditar;
-
-    @FindBy(how = How.XPATH, using = "/html/body/div[2]/div[3]/div/form/div[2]/div/div[1]/button")
-    public WebElement botaoSalvarEdicaoSparker;
-
-    @FindBy(how = How.XPATH, using = "/html/body/div[2]/div[3]/div/form/div[2]/div/div[2]/button")
-    public WebElement getBotaoCancelarEdicaoSparker;
+    @FindBy(how = How.NAME, using = "birth")
+    public WebElement campoDataDeNascimentoSparker;
 }

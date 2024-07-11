@@ -23,20 +23,20 @@ public class EditarPeriodoSteps {
 
     @E("que ele preencha o modal de edição de periodo com os dados corretos")
     public void preencherModalEdicao(){
-        periodo.campoAnoReferenciaEdicao.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-        periodo.campoAnoReferenciaEdicao.sendKeys(GeradorDados.gerarAnoAleatorio());
+        periodo.campoAnoReferencia.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+        periodo.campoAnoReferencia.sendKeys(GeradorDados.gerarAnoAleatorio());
 
-        periodo.campoMesReferenciaEdicao.click();
-        periodo.campoMesReferenciaFevereiro.click();
+        periodo.campoMesReferencia.click();
+        periodo.campoMesReferencia.click();
 
-        periodo.campoHorasUteisEdicao.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-        periodo.campoHorasUteisEdicao.sendKeys("210");
+        periodo.campoHorasUteis.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+        periodo.campoHorasUteis.sendKeys("210");
 
-        periodo.campoDiasUteisEdicao.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-        periodo.campoDiasUteisEdicao.sendKeys("30");
+        periodo.campoDiasUteis.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+        periodo.campoDiasUteis.sendKeys("30");
 
-        periodo.campoObservacaoEdicao.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-        periodo.campoObservacaoEdicao.sendKeys("Periodo editado automação ");
+        periodo.campoObservacao.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+        periodo.campoObservacao.sendKeys("Periodo editado automação ");
     }
 
     @Entao("o sistema atualiza o periodo")

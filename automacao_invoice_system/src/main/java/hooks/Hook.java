@@ -6,8 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.Random;
-
 public class Hook {
     public static WebDriver driver;
     public static WebDriverWait wait;
@@ -15,14 +13,15 @@ public class Hook {
     @Before
     public static void beforeAll() {
         driver = new ChromeDriver();
-        driver.get("https://tst.invoice.redspark.com.br/initial-page");
+        driver.get("https://dev.invoice.redspark.com.br/");
+//        driver.get("http://localhost:3000/initial-page");
     }
+
     @AfterAll
     public static void afterAll() throws InterruptedException{
         Thread.sleep(2000);
         driver.quit();
     }
-
 
 
 }

@@ -3,6 +3,7 @@ package Steps.sparker;
 import PageObjects.CommomPages;
 import PageObjects.SparkerPage;
 import hooks.Hook;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import Steps.Tools.GeradorDados;
@@ -14,8 +15,9 @@ public class AdicionarSparkerSteps {
     public SparkerPage sparker = new SparkerPage(Hook.driver);
     public CommomPages commom = new CommomPages(Hook.driver);
 
-    @Dado("que o usuário esteja na tela de sparker")
-    public void telaSparker() {
+    @E("que o usuário esteja na tela de sparker")
+    public void telaSparker() throws InterruptedException {
+        Thread.sleep(2000);
         sparker.botaoSparker.click();
     }
 

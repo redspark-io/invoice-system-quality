@@ -17,8 +17,9 @@ public class AdicionarProjetoSteps {
     public ProjectPage projeto = new ProjectPage(Hook.driver);
     public CommomPages commom = new CommomPages(Hook.driver);
 
-    @Dado("que o usuário esteja na tela de projetos")
+    @E("que o usuário esteja na tela de projetos")
     public void telaAdicionarProjeto() throws InterruptedException {
+        Thread.sleep(1000);
         client.botaoClientes.click();
         Thread.sleep(2000);
         client.abrirCliente.click();

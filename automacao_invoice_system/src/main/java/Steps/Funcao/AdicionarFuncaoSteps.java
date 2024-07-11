@@ -15,14 +15,15 @@ public class AdicionarFuncaoSteps {
     public FuncaoPage funcao = new FuncaoPage(Hook.driver);
     public CommomPages commom = new CommomPages(Hook.driver);
 
-    @Dado("que o usuário esteja na tela de função")
+    @E("que o usuário esteja na tela de função")
     public void telaAdicionarFuncao() throws InterruptedException{
+        Thread.sleep(1000);
         cliente.botaoClientes.click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         cliente.abrirCliente.click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         projeto.abrirProjeto.click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         rateCard.abrirRateCard.click();
     }
 
