@@ -37,7 +37,7 @@ public class AdicionarRateCardSteps {
 
     @E("que o usuário preencha todos os campos do modal de cadastro corretamente")
     public void preencherModalRateCard() throws InterruptedException{
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         ratecard.campoDescricaoRateCard.sendKeys(GeradorDados.gerarNomeAleatorio(10));
         ratecard.InicioVigenciaRateCard.click();
         ratecard.InicioVigenciaRateCard.sendKeys("01012024");

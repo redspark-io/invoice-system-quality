@@ -4,11 +4,8 @@ import PageObjects.ClientPage;
 import PageObjects.CommomPages;
 import Steps.Tools.GeradorDados;
 import hooks.Hook;
-import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class AdicionarClienteSteps {
     public ClientPage cliente = new ClientPage(Hook.driver);
