@@ -24,9 +24,9 @@ public class EditarSparkerSteps {
     @E("que o usuário preencha o modal de edição com os dados corretos")
     public void preenhcerEdicaoSparker() {
         sparker.campoNomeSparker.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-        sparker.campoNomeSparker.sendKeys(GeradorDados.gerarNomeAleatorio());
-        sparker.campoIdSparkerEditar.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-        sparker.campoIdSparkerEditar.sendKeys(GeradorDados.gerarIdAleatorio());
+        sparker.campoNomeSparker.sendKeys(GeradorDados.gerarNomeAleatorio(10));
+        sparker.campoIdSparker.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+        sparker.campoIdSparker.sendKeys(GeradorDados.gerarIdAleatorio());
         sparker.campoDataDeNascimentoSparker.sendKeys("01012005");
     }
 

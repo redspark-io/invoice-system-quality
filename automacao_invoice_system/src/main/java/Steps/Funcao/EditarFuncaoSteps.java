@@ -21,17 +21,17 @@ public class EditarFuncaoSteps {
 
     @E("que ele preencha o modal de edição com os campos necessários")
     public void preenhcerModalEdicaoFuncao() {
-        funcao.campoNomeFuncaoEditar.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-        funcao.campoNomeFuncaoEditar.sendKeys("QA");
+        funcao.campoNomeFuncao.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+        funcao.campoNomeFuncao.sendKeys("QA");
 
-        funcao.abrirPerfilEditar.click();
-        funcao.perfilSeniorEditar.click();
+        funcao.abrirPerfil.click();
+        funcao.perfilSenior.click();
 
-        funcao.campoValorHoraEditar.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-        funcao.campoValorHoraEditar.sendKeys("200");
+        funcao.campoValorHora.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+        funcao.campoValorHora.sendKeys("200");
 
-        funcao.campoAlocacaoEditar.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
-        funcao.campoAlocacaoEditar.sendKeys("95");
+        funcao.campoAlocacao.sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
+        funcao.campoAlocacao.sendKeys("95");
     }
 
     @Entao("o sistema atualiza os dados da função com sucesso")

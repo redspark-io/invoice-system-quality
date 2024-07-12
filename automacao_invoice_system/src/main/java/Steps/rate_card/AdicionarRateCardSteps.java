@@ -20,8 +20,9 @@ public class AdicionarRateCardSteps {
     public RateCardPage ratecard = new RateCardPage(Hook.driver);
     public CommomPages commom = new CommomPages(Hook.driver);
 
-    @Dado("que o usuário esteja na tela de Rate Cards")
+    @E("que o usuário esteja na tela de Rate Cards")
     public void abrirTelaRateCard() throws InterruptedException {
+        Thread.sleep(1500);
         cliente.botaoClientes.click();
         Thread.sleep(2000);
         cliente.abrirCliente.click();
@@ -36,7 +37,8 @@ public class AdicionarRateCardSteps {
 
     @E("que o usuário preencha todos os campos do modal de cadastro corretamente")
     public void preencherModalRateCard() throws InterruptedException{
-        ratecard.campoDescricaoRateCard.sendKeys(GeradorDados.gerarNomeAleatorio());
+        Thread.sleep(1000);
+        ratecard.campoDescricaoRateCard.sendKeys(GeradorDados.gerarNomeAleatorio(10));
         ratecard.InicioVigenciaRateCard.click();
         ratecard.InicioVigenciaRateCard.sendKeys("01012024");
         Thread.sleep(1000);

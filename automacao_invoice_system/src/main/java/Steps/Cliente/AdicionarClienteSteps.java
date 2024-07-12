@@ -4,18 +4,16 @@ import PageObjects.ClientPage;
 import PageObjects.CommomPages;
 import Steps.Tools.GeradorDados;
 import hooks.Hook;
-import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class AdicionarClienteSteps {
     public ClientPage cliente = new ClientPage(Hook.driver);
     public CommomPages commom = new CommomPages(Hook.driver);
 
-    @Dado("Que o usuario esteja na tela de clientes")
+    @E("que o usuario esteja na tela de clientes")
     public void telaAdicionarCliente() throws  InterruptedException{
+        Thread.sleep(1000);
         cliente.botaoClientes.click();
     }
 
@@ -26,10 +24,8 @@ public class AdicionarClienteSteps {
 
     @E("que ele preencha todos os campos do modal de cadastro corretamente")
     public void preencherCampos(){
-        cliente.campoInvoiceId.sendKeys(GeradorDados.gerarNomeAleatorio());
-        cliente.campoNomeEmperesa.sendKeys(GeradorDados.gerarNomeAleatorio());
-        cliente.botaoStatusCliente.click();
-        cliente.botaoStatusAtivo.click();
+        cliente.campoInvoiceId.sendKeys(GeradorDados.gerarNomeAleatorio(5));
+        cliente.campoNomeEmperesa.sendKeys(GeradorDados.gerarNomeAleatorio(5));
     }
 
     @Entao("o sistema adiciona o novo cliente")

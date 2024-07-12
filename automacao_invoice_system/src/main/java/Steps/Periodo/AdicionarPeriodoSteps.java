@@ -14,8 +14,9 @@ public class AdicionarPeriodoSteps {
     public PeriodoPage periodo = new PeriodoPage(Hook.driver);
     public CommomPages commom = new CommomPages(Hook.driver);
 
-    @Dado("que o usuário esteja na tela de periodo")
-    public void abrirTelaPeriodo(){
+    @E("que o usuário esteja na tela de periodo")
+    public void abrirTelaPeriodo() throws InterruptedException {
+        Thread.sleep(2000);
         periodo.botaoPeriodo.click();
     }
 
@@ -25,8 +26,9 @@ public class AdicionarPeriodoSteps {
     }
 
     @E("que ele preencha os campos obrigatórios do modal")
-    public void preencherModalAdicaoPeriodo(){
-        periodo.campoAnoReferencia.sendKeys(GeradorDados.gerarAnoAleatorio());
+    public void preencherModalAdicaoPeriodo() throws InterruptedException{
+        Thread.sleep(2000);
+        periodo.campoAnoReferencia.sendKeys(GeradorDados.gerarAnoAleatorio(2000, 2024));
         periodo.campoMesReferencia.click();
         periodo.campoMesReferenciaJaneiro.click();
         periodo.campoDiasUteis.sendKeys("30");
