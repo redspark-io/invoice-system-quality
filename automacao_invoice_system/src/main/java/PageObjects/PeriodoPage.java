@@ -11,7 +11,7 @@ public class PeriodoPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(how = How.NAME, using = "sideBarMenuItem-Período")
+    @FindBy(how = How.NAME, using = "sideBarMenuItem-PERIOD")
     public WebElement botaoPeriodo;
 
     @FindBy(how = How.NAME, using = "createButton-Period")

@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public class SparkerPage {
     public SparkerPage(WebDriver driver) {PageFactory.initElements(driver, this);}
 
-    @FindBy(how = How.NAME, using = "sideBarMenuItem-Sparkers")
+    @FindBy(how = How.NAME, using = "sideBarMenuItem-SPARKERS")
     public WebElement botaoSparker;
 
     @FindBy(how = How.NAME, using = "createButton-Sparker")
