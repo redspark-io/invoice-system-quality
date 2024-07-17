@@ -14,7 +14,7 @@ public class ClientPage {
     @FindBy(how = How.NAME, using = "rowIndex-0")
     public WebElement abrirCliente;
 
-    @FindBy(how = How.NAME, using = "sideBarMenuItem-Clientes")
+    @FindBy(how = How.NAME, using = "sideBarMenuItem-CLIENTS")
     public WebElement botaoClientes;
 
     @FindBy(how = How.NAME, using = "createButton-Clientes")
